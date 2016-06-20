@@ -48,6 +48,7 @@ class PlanetHosterAPIClient {
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+        curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . "/cacert.pem");
         if ($this->userAgent) {
             curl_setopt($ch, CURLOPT_USERAGENT, $this->userAgent);
         }
@@ -72,6 +73,7 @@ class PlanetHosterAPIClient {
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+        curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . "/cacert.pem");
         if ($this->userAgent) {
             curl_setopt($ch, CURLOPT_USERAGENT, $this->userAgent);
         }
@@ -110,7 +112,7 @@ class PlanetHosterAPIClient {
 }
 
 function planethoster_WHMCS_version() {
-    return '0.1.0';
+    return '0.1.1';
 }
 
 function planethoster_WHMCS_userAgent() {
